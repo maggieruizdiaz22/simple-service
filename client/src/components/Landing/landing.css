@@ -39,3 +39,9 @@ video {
   background-color: #2f5f5a;
   color: #1c1c26;
 }
+
+@media screen and (max-width: 800px){
+  .videoLanding{
+    background: url("../Imagenes/mobileLanding.mp4");
+  }
+}
