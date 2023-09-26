@@ -58,7 +58,7 @@ export default function UpdateServices() {
     const info = await updateValidator();
 
     await axios.put(
-      `https://simpleservice-production.up.railway.app/user/service/${id}`,
+      `https://simple-service-production.up.railway.app/user/service/${id}`,
       info,
       {
         headers: { Authorization: "Bearer " + token },
