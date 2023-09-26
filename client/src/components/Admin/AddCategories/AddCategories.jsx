@@ -40,7 +40,7 @@ export default function AddCategories() {
       return alert(Object.values(error).join("\n"));
     }
     axios.post(
-      "https://simpleservice-production.up.railway.app/admin/categories",
+      "https://simple-service-production.up.railway.app/admin/categories",
       form
     );
     navigate("admin/home");

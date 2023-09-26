@@ -87,14 +87,14 @@ export default function UpdateProfilesUsers() {
     const info = updateValidator();
 
     const userSelected = await axios.get(
-      `https://simpleservice-production.up.railway.app/admin/users/${id}`,
+      `https://simple-service-production.up.railway.app/admin/users/${id}`,
       {
         headers: { Authorization: "Bearer " + token },
       }
     );
 
     await axios.put(
-      `https://simpleservice-production.up.railway.app/admin/users/${id}`,
+      `https://simple-service-production.up.railway.app/admin/users/${id}`,
       info,
       {
         headers: { Authorization: "Bearer " + token },
@@ -102,10 +102,13 @@ export default function UpdateProfilesUsers() {
     );
 
     if (userSelected.data.active === true && info.active === false) {
-      await axios.post("https://simpleservice-production.up.railway.app/baja", {
-        name: userSelected.data.name,
-        email: userSelected.data.email,
-      });
+      await axios.post(
+        "https://simple-service-production.up.railway.app/baja",
+        {
+          name: userSelected.data.name,
+          email: userSelected.data.email,
+        }
+      );
     }
 
     if (userSelected.data.active === false && info.active === true) {
