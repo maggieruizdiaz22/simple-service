@@ -33,6 +33,7 @@ export default function Register() {
         localStorage.setItem("token", token);
 
         const userId = auth.currentUser.uid;
+        console.log(userId);
         const profilepic = await uploadFile(file, userId);
         createdUser(input.username, input.name, token, profilepic); //dateOfBirth later
 
