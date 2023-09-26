@@ -1,3 +1,4 @@
+require("dotenv").config();
 const serviceAccount = FIREBASE_SERVICE_ACCOUNT_KEY
   ? JSON.parse(FIREBASE_SERVICE_ACCOUNT_KEY)
   : null;
