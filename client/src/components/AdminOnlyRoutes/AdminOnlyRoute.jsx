@@ -8,7 +8,7 @@ const AdminOnlyRoute = ({ children }) => {
   //no esta llenando el estado en esta ruta
 
   if (isLoggedIn) {
-    if (isAdmin || userEmail === "simpleservice@gmail.com") {
+    if (isAdmin || userEmail === "maggieruizdiaz29@gmail.com") {
       return children;
     }
   }
