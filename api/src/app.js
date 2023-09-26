@@ -11,7 +11,13 @@ dotenv.config();
 server.name = "API";
 
 //server.use(session({ secret: "secret" }));
-server.use(cors());
+server.use(
+  cors({
+    origin: "*", // Permite solicitudes desde cualquier origen
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    credentials: true, // Habilita el envío de cookies u otros datos de autenticación
+  })
+);
 //server.use(cors({ credentials: true, origin: "http://localhost:3000" }));
 server.use(express.json());
 //commented because no cookieParser
