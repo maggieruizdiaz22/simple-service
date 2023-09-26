@@ -29,7 +29,7 @@ export default function Create() {
   const [form, setForm] = useState({
     CategoryId: "", //con un select desde el estado global
     description: "",
-    servicename: "", //con un select desde el estado global
+    servicename: "no serviced selected", //con un select desde el estado global
     price: "",
   });
 
@@ -38,9 +38,10 @@ export default function Create() {
     if (!form.CategoryId) {
       errors.CategoryId = "Select Category";
     }
-    if (!form.servicename) {
-      errors.servicename = "Select Service";
-    }
+   if (form.servicename === "no serviced selected") {
+   } else if (!form.servicename) {
+     errors.servicename = "Select Service";
+   }
     if (!form.price) {
       errors.price = "Price is required";
     } else if (isNaN(form.price)) {
